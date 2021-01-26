@@ -1,11 +1,26 @@
 package edu.ib;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Game {
+public class Game extends Application {
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/DeckView.fxml"));
+        Scene scene = new Scene(root, 800,600 );
+        stage.setScene(scene);
+        stage.show();
+    }
 
     /**
      * Enum type to represent the game status
@@ -13,7 +28,7 @@ public class Game {
     public enum Status {CONTINUE, WON, LOST, TIE}
 
     public static void main(String[] args) {
-
+        launch(args);
         // Create two players; one computer and one human
         Player you = new Player("player");
         Player player1 = new Player("player1");
@@ -294,6 +309,7 @@ public class Game {
             // Swap turns
             nextUp = (nextUp == firstCardPlayer) ? secondCardPlayer : firstCardPlayer;
         }
+
     }
 
     // Explain what happened. The game is over.
