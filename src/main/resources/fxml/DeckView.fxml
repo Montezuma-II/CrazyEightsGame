@@ -11,30 +11,30 @@
     <top>
         <AnchorPane prefHeight="119.0" prefWidth="800.0" BorderPane.alignment="CENTER">
             <children>
-                <ImageView fx:id="Player2Card1" fitHeight="95.0" fitWidth="82.0" layoutX="31.0" layoutY="59.0" onDragDetected="#DragCardP2C1" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-                <ImageView fx:id="Player1Card2" fitHeight="95.0" fitWidth="82.0" layoutX="113.0" layoutY="60.0" onDragDetected="#DragCardP2C2" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-                <ImageView fx:id="Player1Card3" fitHeight="95.0" fitWidth="82.0" layoutX="205.0" layoutY="60.0" onDragDetected="#DragCardP2C3" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-                <ImageView fx:id="Player1Card4" fitHeight="95.0" fitWidth="82.0" layoutX="277.0" layoutY="59.0" onDragDetected="#DragCardP2C4" pickOnBounds="true" preserveRatio="true" />
-                <ImageView fx:id="Player1Card5" fitHeight="95.0" fitWidth="82.0" layoutX="359.0" layoutY="59.0" onDragDetected="#DragCardP2C5" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card6" fitHeight="95.0" fitWidth="82.0" layoutX="455.0" layoutY="60.0" onDragDetected="#DragCardP2C6" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card7" fitHeight="95.0" fitWidth="82.0" layoutX="537.0" layoutY="60.0" onDragDetected="#DragCardP2C7" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card8" fitHeight="95.0" fitWidth="82.0" layoutX="605.0" layoutY="59.0" onDragDetected="#DragCardP2C8" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card9" fitHeight="95.0" fitWidth="82.0" layoutX="687.0" layoutY="60.0" onDragDetected="#DragCardP2C9" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="Player2Card1" fitHeight="95.0" fitWidth="82.0" layoutX="31.0" layoutY="59.0"  onMousePressed="#onCardP2C1" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="Player2Card2" fitHeight="95.0" fitWidth="82.0" layoutX="113.0" layoutY="60.0"  onMousePressed="#onCardP2C2" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="Player2Card3" fitHeight="95.0" fitWidth="82.0" layoutX="205.0" layoutY="60.0"  onMousePressed="#onCardP2C3" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="Player2Card4" fitHeight="95.0" fitWidth="82.0" layoutX="277.0" layoutY="59.0" onMousePressed="#onCardP2C4" pickOnBounds="true" preserveRatio="true" />
+                <ImageView fx:id="Player2Card5" fitHeight="95.0" fitWidth="82.0" layoutX="359.0" layoutY="59.0" onMousePressed="#onCardP2C5" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player2Card6" fitHeight="95.0" fitWidth="82.0" layoutX="455.0" layoutY="60.0"  onMousePressed="#onCardP2C6" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player2Card7" fitHeight="95.0" fitWidth="82.0" layoutX="537.0" layoutY="60.0"  onMousePressed="#onCardP1C7" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player2Card8" fitHeight="95.0" fitWidth="82.0" layoutX="605.0" layoutY="59.0"  onMousePressed="#onCardP2C8" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player2Card9" fitHeight="95.0" fitWidth="82.0" layoutX="687.0" layoutY="60.0"  onMousePressed="#onCardP2C9" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
     </top>
     <bottom>
         <AnchorPane prefHeight="124.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fx:id="Player1Card1" fitHeight="95.0" fitWidth="82.0" layoutX="31.0" onDragDetected="#DragCardP1C1" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card2" fitHeight="95.0" fitWidth="82.0" layoutX="113.0" onDragDetected="#DragCardP1C2" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card3" fitHeight="95.0" fitWidth="82.0" layoutX="195.0" onDragDetected="#DragCardP1C3" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card4" fitHeight="95.0" fitWidth="82.0" layoutX="277.0" onDragDetected="#DragCardP1C4" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card5" fitHeight="95.0" fitWidth="82.0" layoutX="523.0" onDragDetected="#DragCardP1C5" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card6" fitHeight="95.0" fitWidth="82.0" layoutX="441.0" onDragDetected="#DragCardP1C6" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card7" fitHeight="95.0" fitWidth="82.0" layoutX="359.0" onDragDetected="#DragCardP1C7" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card8" fitHeight="95.0" fitWidth="82.0" layoutX="605.0" onDragDetected="#DragCardP1C8" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card9" fitHeight="95.0" fitWidth="82.0" layoutX="687.0" onDragDetected="#DragCardP1C9" onMousePressed="#addCardToStos" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card1" fitHeight="95.0" fitWidth="82.0" layoutX="31.0" onMousePressed="#onCardP1C1" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card2" fitHeight="95.0" fitWidth="82.0" layoutX="113.0"  onMousePressed="#onCardP1C2" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card3" fitHeight="95.0" fitWidth="82.0" layoutX="195.0"  pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card4" fitHeight="95.0" fitWidth="82.0" layoutX="277.0"  onMousePressed="#onCardP1C4" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card5" fitHeight="95.0" fitWidth="82.0" layoutX="523.0" onMousePressed="#onCardP1C5" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card6" fitHeight="95.0" fitWidth="82.0" layoutX="441.0" onMousePressed="#onCardP1C6" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card7" fitHeight="95.0" fitWidth="82.0" layoutX="359.0" onMousePressed="#onCardP1C7" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card8" fitHeight="95.0" fitWidth="82.0" layoutX="605.0"  onMousePressed="#onCardP1C8" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card9" fitHeight="95.0" fitWidth="82.0" layoutX="687.0"  onMousePressed="#onCardP1P9" pickOnBounds="true" preserveRatio="true" />
          </children>
         </AnchorPane>
     </bottom>
