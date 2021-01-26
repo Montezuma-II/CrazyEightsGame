@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="ExternalSystem" externalSystem="GRADLE" externalSystemModuleGroup="edu.ib" externalSystemModuleType="sourceSet" externalSystemModuleVersion="1.0-SNAPSHOT" linkedProjectId="CrazyEightsGame:test" linkedProjectPath="$MODULE_DIR$/../.." rootProjectPath="$MODULE_DIR$/../.." />
+  <component name="NewModuleRootManager">
+    <output-test url="file://$MODULE_DIR$/../../build/classes/java/test" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../src/test" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="CrazyEightsGame.main" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-fxml:win:15" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:15" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-controls:win:15" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:15" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-graphics:win:15" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:15" level="project" />
+    <orderEntry type="library" name="Gradle: org.openjfx:javafx-base:win:15" level="project" />
+    <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+  </component>
+  <component name="TestModuleProperties" production-module="CrazyEightsGame.main" />
+</module>

@@ -22,29 +22,27 @@ public class Game extends Application {
         stage.show();
     }
 
-    /**
-     * Enum type to represent the game status
-     */
+
     public enum Status {CONTINUE, WON, LOST, TIE}
 
     public static void main(String[] args) {
         launch(args);
-        // Create two players; one computer and one human
+
         Player you = new Player("player");
         Player player1 = new Player("player1");
 
-        // Create a deck of 52 unique, shuffled cards
+
         ArrayList<Card> deck = Card.createDeck();
 
-        // Initialize the game status
+
         Status gameStatus = Status.CONTINUE;
         String reasonGameOver = "";
-        String newSuit = ""; // When an "8" is played
+        String newSuit = "";
 
-        // Create Scanner to obtain inputs
+
         Scanner input = new Scanner(System.in);
 
-        // Prompt user to begin
+
         System.out.println("Press the Enter key to play a crazy game of Crazy Eights ...");
         try {
             System.in.read();
@@ -53,11 +51,11 @@ public class Game extends Application {
             e.printStackTrace();
         }
 
-        // Randomly select who goes first- Player or Computer
+
         Player firstCardPlayer = Rules.randomPlayer(you, player1);
         Player secondCardPlayer = (firstCardPlayer == you) ? player1 : you;
 
-        // Deal cards
+
         for (int c = 0; c < Rules.CARDS_TO_DEAL; c++) {
             firstCardPlayer.takeCardFromTopOfDeck(deck);
             secondCardPlayer.takeCardFromTopOfDeck(deck);
@@ -65,7 +63,7 @@ public class Game extends Application {
 
         System.out.println(you + " and " + player1 + " were dealt " + Rules.CARDS_TO_DEAL + " cards each.");
 
-        // Initialize the up card
+
         String topCardFaceValue;
         Card topCard;
 
@@ -75,17 +73,17 @@ public class Game extends Application {
 
             topCardFaceValue = topCard.getValue();
 
-            // Up card cannot be an "8". Throw it back in the deck somewhere.
+
             if (topCardFaceValue.equals("8")) {
 
-                // Randomly place somewhere back in the deck
+
                 Random rand = new Random();
                 deck.add(rand.nextInt(deck.size()), topCard);
             }
         }
         while (topCardFaceValue.equals("8"));
 
-        // Randomly select who goes first- Player or Computer
+
         Player nextUp = secondCardPlayer;
 
         System.out.println("Up card to start: " + topCard);
@@ -307,7 +305,7 @@ public class Game extends Application {
             }
 
             // Swap turns
-            nextUp = (nextUp == firstCardPlayer) ? secondCardPlayer : firstCardPlayer;
+            //nextUp = (nextUp == firstCardPlayer) ? secondCardPlayer : firstCardPlayer;
         }
 
     }

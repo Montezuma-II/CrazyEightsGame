@@ -1,14 +1,18 @@
 package edu.ib;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 public class DeckViewController {
+
+    private DeckOfCards deck;
 
     @FXML
     private ResourceBundle resources;
@@ -49,6 +53,8 @@ public class DeckViewController {
     @FXML
     private ImageView StackCards;
 
+
+
     @FXML
     private ImageView PlayedCards;
 
@@ -60,6 +66,9 @@ public class DeckViewController {
 
     @FXML
     void DragCardP1C1(MouseEvent event) {
+
+        PlayedCards.setImage(Player1Card1.getImage());
+        Player1Card1.setImage(StackCards.getImage());
 
     }
 
@@ -151,6 +160,8 @@ public class DeckViewController {
     @FXML
     void addCardToStos(MouseEvent event) {
 
+
+
     }
 
     @FXML
@@ -184,6 +195,49 @@ public class DeckViewController {
         assert PlayedCards != null : "fx:id=\"PlayedCards\" was not injected: check your FXML file 'DeckView.fxml'.";
         assert btnNewCard != null : "fx:id=\"btnNewCard\" was not injected: check your FXML file 'DeckView.fxml'.";
         assert btnGetCard != null : "fx:id=\"btnGetCard\" was not injected: check your FXML file 'DeckView.fxml'.";
+
+
+        deck = new DeckOfCards();
+        deck.shuffle();
+
+            ArrayList<ImageView> images=new ArrayList<>();
+            images.add(Player1Card1);
+        Image image0 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+
+        images.get(0).setImage(image0);
+
+        //Image image0 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image1 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image2 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image3 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image4 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image5 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image6 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image7 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image8 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+        Image image9 = new Image(getClass().getResourceAsStream(deck.dealTopCard().getFileName()));
+
+        //Player1Card1.setImage(image0);
+        Player1Card2.setImage(image1);
+        Player1Card3.setImage(image2);
+        Player1Card4.setImage(image3);
+        Player1Card5.setImage(image4);
+        Player1Card6.setImage(image5);
+        Player1Card7.setImage(image6);
+        Player1Card8.setImage(image7);
+        Player1Card9.setImage(image8);
+       // Player2Card1.setImage(image10);
+
+        Image image10 = new Image(getClass().getResourceAsStream(deck.getBackOfCardImage()));
+
+        StackCards.setImage(image10);
+
+
+        //Image image1 = new Image(getClass().getResourceAsStream(deck.getBackOfCardImage()));
+        //.setImage(image1);
+
+
+
 
     }
 }

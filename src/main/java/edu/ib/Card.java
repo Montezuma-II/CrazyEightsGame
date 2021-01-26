@@ -8,6 +8,8 @@ public class Card {
     private String type;
     private String value;
     private String symbol;
+    public String fileName;
+
 
     /**
      * The four different types of cards in a standard deck
@@ -23,6 +25,10 @@ public class Card {
             "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king", "ace"
     };
 
+    public static final int deckSize = CARD_RANKS.length * CARD_TYPES.length * Rules.NUMBER_OF_DECKS;
+
+    public static final ArrayList<Card> deck = new ArrayList<>(deckSize);
+
     /**
      * Class constructor
      *
@@ -33,6 +39,7 @@ public class Card {
         this.type = type;
         this.value = value;
         this.symbol = pairTypeWithUnicode(type);
+        fileName = "/fxml/images/" +type+"_of_"+value+".png";
     }
 
     public String toString() {
@@ -73,8 +80,8 @@ public class Card {
      */
     public static ArrayList<Card> createDeck() {
 
-        int deckSize = CARD_RANKS.length * CARD_TYPES.length * Rules.NUMBER_OF_DECKS;
-        ArrayList<Card> deck = new ArrayList<>(deckSize);
+        //int deckSize = CARD_RANKS.length * CARD_TYPES.length * Rules.NUMBER_OF_DECKS;
+        //ArrayList<Card> deck = new ArrayList<>(deckSize);
 
         for (int d = 0; d < deckSize; d++) {
             deck.add(new Card(CARD_TYPES[d / 13], CARD_RANKS[d % 13]));
@@ -91,7 +98,7 @@ public class Card {
      *
      * @return Card's rank
      */
-    public String getValue() { return Character.toUpperCase(this.value.charAt(0)) + this.value.substring(1); }
+    public  String getValue() { return Character.toUpperCase(this.value.charAt(0)) + this.value.substring(1); }
 
     /**
      * Returns card suit for comparisons
