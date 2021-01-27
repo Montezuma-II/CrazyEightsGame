@@ -28,7 +28,7 @@
          <children>
             <ImageView fx:id="Player1Card1" fitHeight="95.0" fitWidth="82.0" layoutX="31.0" onMousePressed="#onCardP1C1" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="Player1Card2" fitHeight="95.0" fitWidth="82.0" layoutX="113.0"  onMousePressed="#onCardP1C2" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="Player1Card3" fitHeight="95.0" fitWidth="82.0" layoutX="195.0"  pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="Player1Card3" fitHeight="95.0" fitWidth="82.0" layoutX="195.0" onMousePressed="#onCardP1C3" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="Player1Card4" fitHeight="95.0" fitWidth="82.0" layoutX="277.0"  onMousePressed="#onCardP1C4" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="Player1Card5" fitHeight="95.0" fitWidth="82.0" layoutX="523.0" onMousePressed="#onCardP1C5" pickOnBounds="true" preserveRatio="true" />
             <ImageView fx:id="Player1Card6" fitHeight="95.0" fitWidth="82.0" layoutX="441.0" onMousePressed="#onCardP1C6" pickOnBounds="true" preserveRatio="true" />

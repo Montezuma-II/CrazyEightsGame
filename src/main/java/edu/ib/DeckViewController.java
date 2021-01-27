@@ -108,8 +108,10 @@ public class DeckViewController {
     void onCardP1C2(MouseEvent event) {
         PlayedCards.setImage(Player1Card2.getImage());
         Player1Card2.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
-
-
+    }@FXML
+    public void onCardP1C3(MouseEvent mouseEvent) {
+        PlayedCards.setImage(Player1Card3.getImage());
+        Player1Card3.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
@@ -319,6 +321,5 @@ public class DeckViewController {
 
 
     }
-
 
 }
