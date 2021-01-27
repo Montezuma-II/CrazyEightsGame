@@ -210,10 +210,13 @@ public class DeckViewController {
         status*=-1;
 
         if(status == 1){
-            editText.setText("p1");
+            editText.setText("Player 1");
         }if(status == -1){
-            editText.setText("p2");
+            editText.setText("Player 2");
         }
+
+        AreYaWinnigSon();
+        IamWinnigDad();
 
         return  PlayedPaths;
     }
@@ -221,7 +224,6 @@ public class DeckViewController {
     @FXML
     void onCardP1C1(MouseEvent event) {
         if (status == 1) {
-            AreYaWinnigSon();
             checkCart(0, Player1Patches, Player1Card1, stanP1);
         }
     }
@@ -229,7 +231,6 @@ public class DeckViewController {
     @FXML
     void onCardP1C2(MouseEvent event) {
         if (status ==1) {
-            AreYaWinnigSon();
             checkCart(1, Player1Patches, Player1Card2, stanP1);
         }
     }
@@ -237,7 +238,6 @@ public class DeckViewController {
     @FXML
     public void onCardP1C3(MouseEvent mouseEvent) {
         if (status==1) {
-            AreYaWinnigSon();
             checkCart(2, Player1Patches, Player1Card3, stanP1);
         }
     }
@@ -245,7 +245,6 @@ public class DeckViewController {
     @FXML
     void onCardP1C4(MouseEvent event) {
         if (status == 1) {
-            AreYaWinnigSon();
             checkCart(3, Player1Patches, Player1Card4, stanP1);
         }
     }
@@ -253,7 +252,6 @@ public class DeckViewController {
     @FXML
     void onCardP1C5(MouseEvent event) {
         if (status == 1) {
-            AreYaWinnigSon();
             checkCart(4, Player1Patches, Player1Card5, stanP1);
         }
     }
@@ -261,7 +259,6 @@ public class DeckViewController {
     @FXML
     void onCardP1C6(MouseEvent event) {
         if(status==1) {
-            AreYaWinnigSon();
             checkCart(5, Player1Patches, Player1Card6, stanP1);
         }
     }
@@ -269,7 +266,6 @@ public class DeckViewController {
     @FXML
     void onCardP1C7(MouseEvent event) {
         if (status==1) {
-            AreYaWinnigSon();
             checkCart(6, Player1Patches, Player1Card7, stanP1);
         }
     }
@@ -277,7 +273,6 @@ public class DeckViewController {
     @FXML
     void onCardP1C8(MouseEvent event) {
         if (status==1) {
-            AreYaWinnigSon();
             checkCart(7, Player1Patches, Player1Card8, stanP1);
         }
     }
@@ -285,7 +280,6 @@ public class DeckViewController {
     @FXML
     void onCardP1P9(MouseEvent event) {
         if(status==1) {
-            AreYaWinnigSon();
             checkCart(8, Player1Patches, Player1Card9, stanP1);
         }
     }
@@ -293,7 +287,6 @@ public class DeckViewController {
     @FXML
     public void onCardP2C1(MouseEvent mouseEvent) {
         if(status==-1) {
-            IamWinnigDad();
             checkCart(0, Player2Patches, Player2Card1, stanP2);
         }
     }
@@ -302,7 +295,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C2(MouseEvent event) {
         if (status ==-1) {
-            IamWinnigDad();
             checkCart(1, Player2Patches, Player2Card2, stanP2);
         }
     }
@@ -311,7 +303,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C3(MouseEvent event) {
         if (status==-1) {
-            IamWinnigDad();
             checkCart(2, Player2Patches, Player2Card3, stanP2);
         }
     }
@@ -319,7 +310,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C4(MouseEvent event) {
         if (status == -1) {
-            IamWinnigDad();
             checkCart(3, Player2Patches, Player2Card4, stanP2);
         }
     }
@@ -327,7 +317,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C5(MouseEvent event) {
         if (status == -1) {
-            IamWinnigDad();
             checkCart(4, Player2Patches, Player2Card5, stanP2);
         }
     }
@@ -335,7 +324,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C6(MouseEvent event) {
         if (status == -1) {
-            IamWinnigDad();
             checkCart(5, Player2Patches, Player2Card6, stanP2);
         }
     }
@@ -343,7 +331,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C7(MouseEvent mouseEvent) {
         if(status==-1) {
-            IamWinnigDad();
             checkCart(6, Player2Patches, Player2Card7, stanP2);
         }
     }
@@ -351,7 +338,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C8(MouseEvent event) {
         if(status == -1) {
-            IamWinnigDad();
             checkCart(7, Player2Patches, Player2Card8, stanP2);
         }
     }
@@ -360,7 +346,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C9(MouseEvent event) {
         if(status == -1) {
-            IamWinnigDad();
             checkCart(8, Player2Patches, Player2Card9, stanP2);
         }
     }
@@ -554,7 +539,7 @@ public class DeckViewController {
         DiamondsButton.setDisable(true);
         ClubButton.setDisable(true);
 
-        editText.setText("p1");
+        editText.setText("Player 1");
 
         deck = new DeckOfCards();
         deck.shuffle();
@@ -629,11 +614,4 @@ public class DeckViewController {
 
 
     }
-
-
-//    private Image getPlayedCard (Image playedImage){
-//         return new Image(getClass().getResourceAsStream());
-//    }
-
-
 }
