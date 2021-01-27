@@ -213,6 +213,11 @@ public class DeckViewController {
 
     }
 
+    /**
+     * Po naciśnięciu dodaje karte do kolekcji gracza.
+     * @param event
+     *
+     */
     @FXML
     void onBtnNewCard(ActionEvent event) {
         for (int i = 0; i < imagesPlayer2.size(); i++) {

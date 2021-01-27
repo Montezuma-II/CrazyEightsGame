@@ -73,11 +73,12 @@ public class Player implements PlayerActions {
         // Row 1
         for (int i = 0; i < this.hand.size(); i++) {
             niceHand += this.hand.get(i) + ",  ";
-            lengths.add(this.hand.get(i).toString().length());
+            lengths.add(this.hand.get(i).toString().length()); // aby wybór był wyświetlany
+            // idelanie na środku karty
         }
         niceHand = niceHand.substring(0, niceHand.length() - 3);
 
-        // Row 2
+        // Row 2 Player.hand.get(i).getFileName
         niceHand += "\nYour choices ... ";
 
         for (int i = 0; i < lengths.size(); i++) {
