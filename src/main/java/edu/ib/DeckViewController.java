@@ -19,7 +19,7 @@ public class DeckViewController {
     private ArrayList<ImageView> imagesPlayer2 = new ArrayList<>();
     private ArrayList<String> Player1Patches = new ArrayList<>();
     private ArrayList<String> Player2Patches = new ArrayList<>();
-
+    private  String PlayedPaths = "";
     private DeckOfCards deck = new DeckOfCards();
     private Card card;
     private final Image imageBack = new Image(getClass().getResourceAsStream(deck.getBackOfCardImage()));
@@ -105,155 +105,276 @@ public class DeckViewController {
 
     @FXML
     void onCardP1C1(MouseEvent event) {
-        PlayedCards.setImage(Player1Card1.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card1.getImage());
+        String[] part = Player2Patches.get(0).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card1.getImage());
         Player1Card1.setImage(imageBack);
         stanP1[0] = 1;
+        PlayedPaths = Player1Patches.get(0);
+        }
     }
 
     @FXML
     void onCardP1C2(MouseEvent event) {
-        PlayedCards.setImage(Player1Card2.getImage());
-        System.out.println(Player1Card2);
-//        images.add(images.lastIndexOf(images),getPlayedCard(Player1Card2.getImage()));
+
+        String[] part = Player1Patches.get(1).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card2.getImage());
         Player1Card2.setImage(imageBack);
         stanP1[1] = 1;
+        PlayedPaths = Player1Patches.get(1);
+        }
+
     }
 
     @FXML
     public void onCardP1C3(MouseEvent mouseEvent) {
-        PlayedCards.setImage(Player1Card3.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card3.getImage());
-        Player1Card3.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
+
+        String[] part = Player1Patches.get(2).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card3.getImage());
+        Player1Card3.setImage(imageBack);
         stanP1[2] = 1;
+            PlayedPaths = Player1Patches.get(2);
+        }
     }
 
     @FXML
     void onCardP1C4(MouseEvent event) {
-        PlayedCards.setImage(Player1Card4.getImage());
 
-//        images.add(images.lastIndexOf(images),Player1Card4.getImage());
-        Player1Card4.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
+        String[] part = Player1Patches.get(3).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card4.getImage());
+        Player1Card4.setImage(imageBack);
         stanP1[3] = 1;
-
+            PlayedPaths = Player1Patches.get(3);
+        }
     }
 
     @FXML
     void onCardP1C5(MouseEvent event) {
-        PlayedCards.setImage(Player1Card5.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card5.getImage());
-        Player1Card5.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-        stanP1[4] = 1;
 
+        String[] part = Player1Patches.get(4).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card5.getImage());
+        Player1Card5.setImage(imageBack);
+        stanP1[4] = 1;
+            PlayedPaths = Player1Patches.get(4);
+        }
     }
 
     @FXML
     void onCardP1C6(MouseEvent event) {
-        PlayedCards.setImage(Player1Card6.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card6.getImage());
-        Player1Card6.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-        stanP1[5] = 1;
 
+        String[] part = Player1Patches.get(5).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card6.getImage());
+        Player1Card6.setImage(imageBack);
+        stanP1[5] = 1;
+            PlayedPaths = Player1Patches.get(5);
+        }
     }
 
     @FXML
     void onCardP1C7(MouseEvent event) {
-        PlayedCards.setImage(Player1Card7.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card7.getImage());
-        Player1Card7.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage()))); // obraz tylniej karty
-        stanP1[6] = 1;
 
+        String[] part = Player1Patches.get(6).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card7.getImage());
+        Player1Card7.setImage(imageBack); // obraz tylniej karty
+        stanP1[6] = 1;
+        PlayedPaths = Player1Patches.get(6);
+        }
     }
 
     @FXML
     void onCardP1C8(MouseEvent event) {
-        PlayedCards.setImage(Player1Card8.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card8.getImage());
-        Player1Card8.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-        stanP1[7] = 1;
 
+        String[] part = Player1Patches.get(7).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card8.getImage());
+        Player1Card8.setImage(imageBack);
+        stanP1[7] = 1;
+        PlayedPaths = Player1Patches.get(7);
+        }
     }
 
     @FXML
     void onCardP1P9(MouseEvent event) {
-        PlayedCards.setImage(Player1Card9.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card9.getImage());
-        Player1Card9.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-        stanP1[8] = 1;
 
+        String[] part = Player1Patches.get(8).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player1Card9.getImage());
+        Player1Card9.setImage(imageBack);
+        stanP1[8] = 1;
+            PlayedPaths = Player1Patches.get(8);
+        }
     }
 
     @FXML
     public void onCardP2C1(MouseEvent mouseEvent) {
-        PlayedCards.setImage(Player2Card1.getImage());
-//        images.add(images.lastIndexOf(images),Player2Card1.getImage());
-        Player2Card1.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
+
+        String[] part = Player2Patches.get(0).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card1.getImage());
+        Player2Card1.setImage(imageBack);
         stanP2[0] = 1;
+            PlayedPaths = Player2Patches.get(0);
+        }
     }
 
 
     @FXML
     void onCardP2C2(MouseEvent event) {
-        PlayedCards.setImage(Player2Card2.getImage());
-//        images.add(images.lastIndexOf(images),Player2Card2.getImage());
-        Player2Card2.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
+
+        String[] part = Player2Patches.get(1).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card2.getImage());
+        Player2Card2.setImage(imageBack);
         stanP2[1] = 1;
+        PlayedPaths = Player2Patches.get(1);
+    }
     }
 
     @FXML
     void onCardP2C3(MouseEvent event) {
-        PlayedCards.setImage(Player2Card3.getImage());
-//        images.add(images.lastIndexOf(images),Player1Card3.g);
-        Player2Card3.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
+
+        String[] part = Player2Patches.get(2).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card3.getImage());
+        Player2Card3.setImage(imageBack);
         stanP2[2] = 1;
+        PlayedPaths = Player2Patches.get(2);
+    }
     }
 
     @FXML
     void onCardP2C4(MouseEvent event) {
         PlayedCards.setImage(Player2Card4.getImage());
-//        images.add(images.lastIndexOf(images),Player2Card4.getImage());
-        Player2Card4.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
+        String[] part = Player2Patches.get(3).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card4.getImage());
+        Player2Card4.setImage(imageBack);
         stanP2[3] = 1;
+            PlayedPaths = Player2Patches.get(3);
+        }
     }
 
     @FXML
     void onCardP2C5(MouseEvent event) {
-        PlayedCards.setImage(Player2Card5.getImage());
-//        images.add(images.lastIndexOf(images),Player2Card5.getImage());
-        Player2Card5.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
+
+        String[] part = Player2Patches.get(4).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card5.getImage());
+        Player2Card5.setImage(imageBack);
         stanP2[4] = 1;
+            PlayedPaths = Player2Patches.get(4);
+        }
     }
 
     @FXML
     void onCardP2C6(MouseEvent event) {
-        PlayedCards.setImage(Player2Card6.getImage());
-//        images.add(images.lastIndexOf(images),Player2Card6.getImage());
-        Player2Card6.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-        stanP2[5] = 1;
+
+        String[] part = Player2Patches.get(5).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card6.getImage());
+            Player2Card6.setImage(imageBack);
+            stanP2[5] = 1;
+            PlayedPaths = Player2Patches.get(5);
+        }
     }
 
     @FXML
     void onCardP2C7(MouseEvent mouseEvent) {
-        PlayedCards.setImage(Player2Card7.getImage());
-//        images.add(images.lastIndexOf(images),Player2Card7.getImage());
-        Player2Card7.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-        stanP2[6] = 1;
+
+        String[] part = Player2Patches.get(6).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card7.getImage());
+            Player2Card7.setImage(imageBack);
+            stanP2[6] = 1;
+            PlayedPaths = Player2Patches.get(6);
+        }
     }
 
     @FXML
     void onCardP2C8(MouseEvent event) {
-        PlayedCards.setImage(Player2Card8.getImage());
-//        images.add(images.lastIndexOf(images),Player2Card8.getImage());
-        Player2Card8.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-        stanP2[7] = 1;
-    }
+        String[] part = Player2Patches.get(7).split("_of_");
+        String []  played = PlayedPaths.split("_of_");
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0])||part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card8.getImage());
+            Player2Card8.setImage(imageBack);
+            stanP2[7] = 1;
+            PlayedPaths=Player2Patches.get(7);
+
+        }
+        }
+
 
     @FXML
     void onCardP2C9(MouseEvent event) {
-        PlayedCards.setImage(Player2Card9.getImage());
-//        images.add(images.lastIndexOf(images),PlayedCards.getImage());
-        Player2Card9.setImage(imageBack);
-        stanP2[8] = 1;
+        String[] part = Player2Patches.get(8).split("_of_");
+        String[] played = PlayedPaths.split("_of_");
+
+        if (part[0].equals("/fxml/images/8")) {
+        }
+        if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            PlayedCards.setImage(Player2Card9.getImage());
+            Player2Card9.setImage(imageBack);
+            stanP2[8] = 1;
+            PlayedPaths = Player2Patches.get(8);
+        }
     }
 
     @FXML
@@ -276,6 +397,8 @@ public class DeckViewController {
             if( stanP1[i] == 1){
                 stanP1[i] = 0;
                 imagesPlayer1.get(i).setImage(images.get(0));
+                Player1Patches.set(i,patches.get(0));
+                patches.remove(0);
                 images.remove(0);
                 break;
             }
@@ -291,12 +414,13 @@ public class DeckViewController {
     void onBtnNewCard(ActionEvent event) {
 //        PlayedCards.setImage(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
         PlayedCards.setImage(images.get(0)); // pobiera pierwszą kartę z listy images
+        PlayedPaths=patches.get(0);
+        patches.remove(0);
         images.remove(0); // usuwa pobraną karte
     }
 
     @FXML
     void onBtnP2NW(ActionEvent actionEvent) {
-
     }
 
     /**
@@ -311,6 +435,8 @@ public class DeckViewController {
             if (stanP2[i] == 1) {
                 stanP2[i] = 0;
                 imagesPlayer2.get(i).setImage(images.get(0));
+                Player2Patches.set(i,patches.get(0));
+                patches.remove(0);
                 images.remove(0);
                 break;
             }
@@ -388,12 +514,12 @@ public class DeckViewController {
             imagesPlayer1.get(i).setImage(images.get(0));
             images.remove(0);               // usuwa pobrana karte, pozostąłe przesuną się w lewo
             Player1Patches.add(patches.get(0)); // prowadzenie ścieżki karty
-            patches.get(0);                     // usuwanie ścieżki żeby się nie powtarzała
+            patches.remove(0);                     // usuwanie ścieżki żeby się nie powtarzała
 
             imagesPlayer2.get(i).setImage(images.get(0));
             images.remove(0);
             Player2Patches.add(patches.get(0)); // prowadzenie ścieżki karty
-            patches.get(0);                     // usuwanie ścieżki żeby się nie powtarzała
+            patches.remove(0);                     // usuwanie ścieżki żeby się nie powtarzała
         }
 
 
