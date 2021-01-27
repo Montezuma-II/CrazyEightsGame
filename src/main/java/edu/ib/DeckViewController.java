@@ -101,7 +101,7 @@ public class DeckViewController {
     void onCardP1C1(MouseEvent event) {
         PlayedCards.setImage(Player1Card1.getImage());
         Player1Card1.setImage(new Image(getClass().getResourceAsStream(deck.getBackOfCardImage())));
-
+//        images.add(Player1Card1.getImage(),images.lastIndexOf());
     }
 
     @FXML
@@ -326,9 +326,9 @@ public class DeckViewController {
 
 
         for (int i = 0; i < imagesPlayer1.size(); i++) {
-            imagesPlayer1.get(i).setImage(images.get(i));
+            imagesPlayer1.get(i).setImage(images.get(0));
             images.remove(0); // usuwa pobrana karte, pozostąłe przesuną się w lewo
-            imagesPlayer2.get(i).setImage(images.get(i));
+            imagesPlayer2.get(i).setImage(images.get(0));
             images.remove(0);
         }
 
