@@ -1,7 +1,6 @@
 package edu.ib;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 public class CardVisual {
@@ -17,12 +16,7 @@ public class CardVisual {
     public CardVisual(String faceName, String suit) {
         setFaceName(faceName);
         setSuit(suit);
-        //String fileName = "fxml/images/" +faceName+"_of_"+suit+".png";
         fileName = "/fxml/images/" +faceName+"_of_"+suit+".png";
-
-        //image= new Image((new File("/edu/ib/images/red_joker.png").toURI().toString()));
-        //image=fileName;
-        //image = new Image(getClass().getResourceAsStream(fileName));
 
     }
 
@@ -94,12 +88,4 @@ public class CardVisual {
     {
         return String.format("%s of %s", faceName, suit);
     }
-
-
-
-
-
-    public void shuffleSuits() { Collections.shuffle(getValidSuits()); }
-
-
 }

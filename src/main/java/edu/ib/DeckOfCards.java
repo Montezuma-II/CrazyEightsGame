@@ -8,12 +8,6 @@ public class DeckOfCards {
     private ArrayList<CardVisual> deck;
     private String backOfCardImage;
 
-    //1. define the class
-    //2. define the instance variables
-    //3. create Constructor - this will define the object in the system
-    //4. create get/set methods
-    //5. create any custom methods
-
 
     /**
      * This is a 1 argument constructor that passes in a collection
@@ -23,7 +17,6 @@ public class DeckOfCards {
     public DeckOfCards(ArrayList<CardVisual> deck) {
         this.deck = deck;
         backOfCardImage = "/fxml/images/backOfCard.png";
-        //backOfCardImage=new Image(getClass().getResourceAsStream("/edu/ib/images/red_joker.png"));
     }
 
     /**
@@ -31,9 +24,7 @@ public class DeckOfCards {
      */
     public DeckOfCards()
     {
-        List<String> suits = CardVisual.getValidSuits(); //this is calling a static method
-                                                    //so we do NOT need an instance of Card
-                                                    //to call it
+        List<String> suits = CardVisual.getValidSuits();
         List<String> faceNames = CardVisual.getValidFaceNames();
 
         deck = new ArrayList<>();
@@ -44,9 +35,6 @@ public class DeckOfCards {
                 deck.add(new CardVisual(faceName,suit));
         }
         backOfCardImage = "/fxml/images/backOfCard.png";
-        //backOfCardImage = new Image("file:/fxml/images/red_joker.png");
-        //backOfCardImage=new Image(getClass().getResourceAsStream("/edu/ib/images/red_joker.png"));
-
     }
 
     public ArrayList<CardVisual> getDeck() {
@@ -75,12 +63,6 @@ public class DeckOfCards {
         else
             return null;
     }
-
-
-
-    /**
-     * This method will shuffle the deck of cards
-     */
     public void shuffle()
     {
         Collections.shuffle(deck);
