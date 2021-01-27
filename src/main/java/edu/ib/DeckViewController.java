@@ -17,6 +17,9 @@ public class DeckViewController {
     private ArrayList<Image> images = new ArrayList<>();
     private ArrayList<ImageView> imagesPlayer1 = new ArrayList<>();
     private ArrayList<ImageView> imagesPlayer2 = new ArrayList<>();
+    private ArrayList<String> Player1Patches = new ArrayList<>();
+    private ArrayList<String> Player2Patches = new ArrayList<>();
+
     private DeckOfCards deck = new DeckOfCards();
     private Card card;
     private final Image imageBack = new Image(getClass().getResourceAsStream(deck.getBackOfCardImage()));
@@ -24,6 +27,7 @@ public class DeckViewController {
     private ArrayList<Card> deck1 = Card.createDeck();
     private int[] stanP1 = new int[9];
     private int[] stanP2 = new int[9];
+    private ArrayList <String> patches = new ArrayList<>();
 
     @FXML
     private ResourceBundle resources;
@@ -110,6 +114,7 @@ public class DeckViewController {
     @FXML
     void onCardP1C2(MouseEvent event) {
         PlayedCards.setImage(Player1Card2.getImage());
+        System.out.println(Player1Card2);
 //        images.add(images.lastIndexOf(images),getPlayedCard(Player1Card2.getImage()));
         Player1Card2.setImage(imageBack);
         stanP1[1] = 1;
@@ -262,6 +267,7 @@ public class DeckViewController {
     }
     // todo podłączyc zasady gry
     // todo no i to chyba wszystko
+    // todo znaleźć metodę zbierającą nazwe pliku karty czyli np.: 7_of_coś tam
 
     @FXML
     void onBtnGetCard(ActionEvent event) {
@@ -294,7 +300,7 @@ public class DeckViewController {
     }
 
     /**
-     * po kliku sprawdza ktre karty zostały zagrane(odwrócone) i doda pierwsza kartę z góry.
+     * po kliku sprawdza, które karty zostały zagrane(odwrócone) i doda pierwsza kartę z góry.
      *
      * @param actionEvent
      */
@@ -310,6 +316,13 @@ public class DeckViewController {
             }
         }
     }
+
+    /**
+     * przywołanie parametrów numeru oraz koloru.
+     */
+    private CardVisual cardFace = new CardVisual();
+    String face =  cardFace.getFaceName();
+    String suit = cardFace.getSuit()+".png";
 
     @FXML
     void initialize() {
@@ -361,8 +374,10 @@ public class DeckViewController {
 
 
         for (int i = 0; i < 52; i++) {
-            images.add(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName))); // stworzony stos kart!!!!
-            //images.add(new Image(getClass().getResourceAsStream(player.takeCardFromTopOfDeck(deck1).));
+            String deckFile = deck.dealTopCard().fileName;
+            images.add(new Image(getClass().getResourceAsStream(deckFile))); // stworzony stos kart!!!!
+            patches.add(deckFile); // lista do zapisująca tylko ścieżki  kart
+//            System.out.println( deckFile +" "+patches.get(i));
         }
 
 
@@ -371,9 +386,14 @@ public class DeckViewController {
 
         for (int i = 0; i < imagesPlayer1.size(); i++) {
             imagesPlayer1.get(i).setImage(images.get(0));
-            images.remove(0); // usuwa pobrana karte, pozostąłe przesuną się w lewo
+            images.remove(0);               // usuwa pobrana karte, pozostąłe przesuną się w lewo
+            Player1Patches.add(patches.get(0)); // prowadzenie ścieżki karty
+            patches.get(0);                     // usuwanie ścieżki żeby się nie powtarzała
+
             imagesPlayer2.get(i).setImage(images.get(0));
             images.remove(0);
+            Player2Patches.add(patches.get(0)); // prowadzenie ścieżki karty
+            patches.get(0);                     // usuwanie ścieżki żeby się nie powtarzała
         }
 
 
