@@ -10,6 +10,9 @@ public class Card {
     private String symbol;
     public String fileName;
 
+    public String getFileName() {
+        return fileName;
+    }
 
     /**
      * The four different types of cards in a standard deck

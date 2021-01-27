@@ -98,14 +98,14 @@ public class DeckViewController {
 
 
     @FXML
-    void onCardP1C1(ActionEvent event) {
+    void onCardP1C1(MouseEvent event) {
         PlayedCards.setImage(Player1Card1.getImage());
         Player1Card1.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
 
     }
 
     @FXML
-    void onCardP1C2(ActionEvent event) {
+    void onCardP1C2(MouseEvent event) {
         PlayedCards.setImage(Player1Card2.getImage());
         Player1Card2.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
 
@@ -139,7 +139,8 @@ public class DeckViewController {
     @FXML
     void onCardP1C7(MouseEvent event) {
         PlayedCards.setImage(Player1Card7.getImage());
-        Player1Card7.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
+        Player1Card7.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage()))); // obraz tylniej karty
+
 
 
     }
@@ -161,42 +162,56 @@ public class DeckViewController {
     }
 
     public void onCardP2C1(MouseEvent mouseEvent) {
+        PlayedCards.setImage(Player2Card1.getImage());
+        Player2Card1.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
 
     @FXML
     void onCardP2C2(MouseEvent event) {
-
+        PlayedCards.setImage(Player2Card2.getImage());
+        Player2Card2.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
     void onCardP2C3(MouseEvent event) {
-
+        PlayedCards.setImage(Player2Card3.getImage());
+        Player2Card3.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
     void onCardP2C4(MouseEvent event) {
-
+        PlayedCards.setImage(Player2Card4.getImage());
+        Player2Card4.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
     void onCardP2C5(MouseEvent event) {
-
+        PlayedCards.setImage(Player2Card5.getImage());
+        Player2Card5.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
     void onCardP2C6(MouseEvent event) {
-
+        PlayedCards.setImage(Player2Card6.getImage());
+        Player2Card6.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
+    }
+    @FXML
+    void onCardP2C7(MouseEvent mouseEvent) {
+        PlayedCards.setImage(Player2Card7.getImage());
+        Player2Card7.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
     void onCardP2C8(MouseEvent event) {
-
+        PlayedCards.setImage(Player2Card8.getImage());
+        Player2Card8.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
     void onCardP2C9(MouseEvent event) {
-
+        PlayedCards.setImage(Player2Card9.getImage());
+        Player2Card9.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
     }
 
     @FXML
