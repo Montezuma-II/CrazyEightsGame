@@ -154,10 +154,16 @@ public class DeckViewController {
             String path = pP.get(nrC).toString();
             String[] part = path.split("of");
             String[] played = PlayedPaths.split("of");
-            if (part[0].equals("/fxml/images/8")) {
+            if (part[0].equals("/fxml/images/8_")) {
+                HeartsButton.setDisable(false);
+                SpadesButton.setDisable(false);
+                DiamondsButton.setDisable(false);
+                ClubButton.setDisable(false);
+                PlayedCards.setImage(PC.getImage());
+                PC.setImage(imageBack);
+                s[nrC] = 1;
 
-            }
-            if (part[0].equals(played[0]) || part[1].equals(played[1])) {
+            }else if (part[0].equals(played[0]) || part[1].equals(played[1])) {
                 PlayedCards.setImage(PC.getImage());
                 PC.setImage(imageBack);
                 s[nrC] = 1;
@@ -404,6 +410,8 @@ public class DeckViewController {
 
     }
 
+
+
     @FXML
     void onStackPressed(MouseEvent event) {
 
@@ -475,21 +483,42 @@ public class DeckViewController {
 
     @FXML
     void onClubsButton(ActionEvent event) {
+        PlayedPaths = "/fxml/images/8_of_clubs.png";
+        HeartsButton.setDisable(true);
+        SpadesButton.setDisable(true);
+        DiamondsButton.setDisable(true);
+        ClubButton.setDisable(true);
 
     }
 
     @FXML
     void onDiamondsButton(ActionEvent event) {
+        PlayedPaths = "/fxml/images/8_of_diamonds.png";
+        HeartsButton.setDisable(true);
+        SpadesButton.setDisable(true);
+        DiamondsButton.setDisable(true);
+        ClubButton.setDisable(true);
 
     }
 
     @FXML
     void onHeartsButton(ActionEvent event) {
+        PlayedPaths = "/fxml/images/8_of_hearts.png";
+        HeartsButton.setDisable(true);
+        SpadesButton.setDisable(true);
+        DiamondsButton.setDisable(true);
+        ClubButton.setDisable(true);
+
 
     }
 
     @FXML
     void onSpadesButton(ActionEvent event) {
+        PlayedPaths = "/fxml/images/8_of_spades.png";
+        HeartsButton.setDisable(true);
+        SpadesButton.setDisable(true);
+        DiamondsButton.setDisable(true);
+        ClubButton.setDisable(true);
 
     }
 
@@ -518,6 +547,11 @@ public class DeckViewController {
         assert PlayedCards != null : "fx:id=\"PlayedCards\" was not injected: check your FXML file 'DeckView.fxml'.";
         assert btnNewCard != null : "fx:id=\"btnNewCard\" was not injected: check your FXML file 'DeckView.fxml'.";
         assert btnGetCard != null : "fx:id=\"btnGetCard\" was not injected: check your FXML file 'DeckView.fxml'.";
+
+        HeartsButton.setDisable(true);
+        SpadesButton.setDisable(true);
+        DiamondsButton.setDisable(true);
+        ClubButton.setDisable(true);
 
         deck = new DeckOfCards();
         deck.shuffle();
