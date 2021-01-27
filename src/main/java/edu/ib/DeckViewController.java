@@ -1,5 +1,6 @@
 package edu.ib;
 
+import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -7,11 +8,15 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 public class DeckViewController {
 
@@ -26,8 +31,11 @@ public class DeckViewController {
     private final Image imageBack = new Image(getClass().getResourceAsStream(deck.getBackOfCardImage()));
     private Player player;
     private ArrayList<Card> deck1 = Card.createDeck();
+    //private int[] stanP1 = new int[9];
     private int[] stanP1 = new int[9];
     private int[] stanP2 = new int[9];
+    private int status=1;
+
     private ArrayList <String> patches = new ArrayList<>();
 
     @FXML
@@ -103,6 +111,9 @@ public class DeckViewController {
     @FXML
     private Button btnGetCard;
 
+
+
+
     public void AreYaWinnigSon(){
         int licznik=0;
         for(int i = 0; i < stanP1.length; i++){
@@ -126,11 +137,13 @@ public class DeckViewController {
      * @return
      */
     private String checkCart (int nrC, ArrayList pP,ImageView PC, int [] s) {
+
         if(s[nrC]==0) {
             String path = pP.get(nrC).toString();
             String[] part = path.split("of");
             String[] played = PlayedPaths.split("of");
             if (part[0].equals("/fxml/images/8")) {
+
             }
             if (part[0].equals(played[0]) || part[1].equals(played[1])) {
                 PlayedCards.setImage(PC.getImage());
@@ -139,154 +152,217 @@ public class DeckViewController {
                 PlayedPaths = pP.get(nrC).toString();
             }
         }
+        status*=-1;
         return  PlayedPaths;
     }
 
     @FXML
     void onCardP1C1(MouseEvent event) {
+        if (status == 1) {
+            AreYaWinnigSon();
 
-        AreYaWinnigSon();
-        while (stanP1[0] == 0) {
-            checkCart(0,Player1Patches,Player1Card1,stanP1);
+            checkCart(0, Player1Patches, Player1Card1, stanP1);
+
+
         }
+
     }
 
     @FXML
     void onCardP1C2(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status ==1) {
+            AreYaWinnigSon();
 
-            checkCart(1,Player1Patches,Player1Card2,stanP1);
+            checkCart(1, Player1Patches, Player1Card2, stanP1);
 
+
+
+        }
 
     }
 
     @FXML
     public void onCardP1C3(MouseEvent mouseEvent) {
+        if (status==1) {
 
-        AreYaWinnigSon();
+            AreYaWinnigSon();
 
 
-            checkCart(2,Player1Patches,Player1Card3,stanP1);
+            checkCart(2, Player1Patches, Player1Card3, stanP1);
+
+        }
 
     }
 
     @FXML
     void onCardP1C4(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status == 1) {
+            AreYaWinnigSon();
 
-            checkCart(3,Player1Patches,Player1Card4,stanP1);
+            checkCart(3, Player1Patches, Player1Card4, stanP1);
+
+
+        }
 
     }
 
     @FXML
     void onCardP1C5(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status == 1) {
+            AreYaWinnigSon();
 
-            checkCart(4,Player1Patches,Player1Card5,stanP1);
+            checkCart(4, Player1Patches, Player1Card5, stanP1);
+
+        }
 
     }
 
     @FXML
     void onCardP1C6(MouseEvent event) {
-        AreYaWinnigSon();
+        if(status==1) {
+            AreYaWinnigSon();
 
-            checkCart(5,Player1Patches,Player1Card6,stanP1);
+            checkCart(5, Player1Patches, Player1Card6, stanP1);
+
+        }
+
 
     }
 
     @FXML
     void onCardP1C7(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status==1) {
+            AreYaWinnigSon();
 
 
-            checkCart(6,Player1Patches,Player1Card7,stanP1);
+            checkCart(6, Player1Patches, Player1Card7, stanP1);
+
+        }
 
     }
 
     @FXML
     void onCardP1C8(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status==1) {
+            AreYaWinnigSon();
 
 
-            checkCart(7,Player1Patches,Player1Card8,stanP1);
+            checkCart(7, Player1Patches, Player1Card8, stanP1);
+
+        }
 
     }
 
     @FXML
     void onCardP1P9(MouseEvent event) {
-        AreYaWinnigSon();
+        if(status==1) {
+            AreYaWinnigSon();
 
-            checkCart(8,Player1Patches,Player1Card9,stanP1);
+            checkCart(8, Player1Patches, Player1Card9, stanP1);
+
+        }
+
 
     }
 
     @FXML
     public void onCardP2C1(MouseEvent mouseEvent) {
-        AreYaWinnigSon();
+        if(status==-1) {
+            AreYaWinnigSon();
 
 
-            checkCart(0,Player2Patches,Player2Card1,stanP2);
+            checkCart(0, Player2Patches, Player2Card1, stanP2);
+
+        }
+
 
     }
 
 
     @FXML
     void onCardP2C2(MouseEvent event) {
-        AreYaWinnigSon();
+
+        if (status ==-1) {
+            AreYaWinnigSon();
 
 
-            checkCart(1,Player2Patches,Player2Card2,stanP2);
+            checkCart(1, Player2Patches, Player2Card2, stanP2);
+
         }
+
+    }
 
 
     @FXML
     void onCardP2C3(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status==-1) {
+            AreYaWinnigSon();
 
 
-            checkCart(2,Player2Patches,Player2Card3,stanP2);
+            checkCart(2, Player2Patches, Player2Card3, stanP2);
+
+        }
 
     }
 
     @FXML
     void onCardP2C4(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status == -1) {
+            AreYaWinnigSon();
 
-            checkCart(3,Player2Patches,Player2Card4,stanP2);
+            checkCart(3, Player2Patches, Player2Card4, stanP2);
+
+
+        }
 
     }
 
     @FXML
     void onCardP2C5(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status == -1) {
+            AreYaWinnigSon();
 
-            checkCart(4,Player2Patches,Player2Card5,stanP2);
+            checkCart(4, Player2Patches, Player2Card5, stanP2);
+
+
+        }
 
     }
 
     @FXML
     void onCardP2C6(MouseEvent event) {
-        AreYaWinnigSon();
+        if (status == -1) {
+            AreYaWinnigSon();
 
 
-            checkCart(5,Player2Patches,Player2Card6,stanP2);
+            checkCart(5, Player2Patches, Player2Card6, stanP2);
+
+
+        }
 
     }
 
     @FXML
     void onCardP2C7(MouseEvent mouseEvent) {
-        AreYaWinnigSon();
+        if(status==-1) {
+            AreYaWinnigSon();
 
 
-            checkCart(6,Player2Patches,Player2Card7,stanP2);
+            checkCart(6, Player2Patches, Player2Card7, stanP2);
+
+        }
+
 
     }
 
     @FXML
     void onCardP2C8(MouseEvent event) {
-        AreYaWinnigSon();
+        if(status==-1) {
+            AreYaWinnigSon();
 
             checkCart(7, Player2Patches, Player2Card8, stanP2);
+
+        }
 
     }
 
@@ -468,6 +544,8 @@ public class DeckViewController {
 
 
     }
+
+
 //    private Image getPlayedCard (Image playedImage){
 //         return new Image(getClass().getResourceAsStream());
 //    }
