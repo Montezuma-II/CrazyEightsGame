@@ -61,8 +61,8 @@
       <VBox prefHeight="204.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player 1 options:" wrappingWidth="98.13672065734863" />
-            <Button fx:id="btnNewCard" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onBtnNewCard" prefHeight="46.0" prefWidth="102.0" text="New Card" />
             <Button fx:id="btnGetCard" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onBtnGetCard" prefHeight="46.0" prefWidth="102.0" text="Take Card" />
+            <Button fx:id="btnNewCard" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onBtnNewCard" prefHeight="46.0" prefWidth="102.0" text="New Card" />
          </children>
       </VBox>
    </right>
@@ -70,7 +70,6 @@
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2 options:" wrappingWidth="99.73672485351562" />
-            <Button fx:id="btnP2NewCard" mnemonicParsing="false" onAction="#onBtnP2NW" prefHeight="46.0" prefWidth="102.0" text="New Card" />
             <Button fx:id="btnP2TakeCard" mnemonicParsing="false" onAction="#onBtnP2TakeCard" prefHeight="46.0" prefWidth="102.0" text="Take Card" />
          </children>
       </VBox>
