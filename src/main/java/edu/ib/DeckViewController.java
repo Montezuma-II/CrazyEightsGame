@@ -18,6 +18,9 @@ public class DeckViewController {
     private DeckOfCards deck=new DeckOfCards();
     private Card card;
     private Image imageBack = new Image(getClass().getResourceAsStream(deck.getBackOfCardImage()));
+    private Player player;
+    private ArrayList<Card> deck1 = Card.createDeck();
+
 
 
     @FXML
@@ -95,14 +98,14 @@ public class DeckViewController {
 
 
     @FXML
-    void onCardP1C1(MouseEvent event) {
+    void onCardP1C1(ActionEvent event) {
         PlayedCards.setImage(Player1Card1.getImage());
         Player1Card1.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
 
     }
 
     @FXML
-    void onCardP1C2(MouseEvent event) {
+    void onCardP1C2(ActionEvent event) {
         PlayedCards.setImage(Player1Card2.getImage());
         Player1Card2.setImage(new Image (getClass().getResourceAsStream(deck.getBackOfCardImage())));
 
@@ -209,18 +212,21 @@ public class DeckViewController {
     @FXML
     void onBtnGetCard(ActionEvent event) {
 
-
-
-    }
-
-    @FXML
-    void onBtnNewCard(ActionEvent event) {
         for (int i = 0; i < imagesPlayer2.size(); i++) {
             if (imagesPlayer1.get(i).getImage() == imageBack)
                 imagesPlayer1.get(i).setImage(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
             if (imagesPlayer2.get(i).getImage() == imageBack)
                 imagesPlayer2.get(i).setImage(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
         }
+
+
+
+    }
+
+    @FXML
+    void onBtnNewCard(ActionEvent event) {
+        PlayedCards.setImage(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
+
     }
 
 
@@ -282,6 +288,7 @@ public class DeckViewController {
 
         for (int i = 0; i < 52; i++) {
             images.add(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
+            //images.add(new Image(getClass().getResourceAsStream(player.takeCardFromTopOfDeck(deck1).));
         }
 
 
@@ -290,9 +297,10 @@ public class DeckViewController {
 
         for (int i = 0; i < imagesPlayer1.size(); i++) {
             imagesPlayer1.get(i).setImage(images.get(i));
-            imagesPlayer2.get(i).setImage(images.get(i));
+            imagesPlayer2.get(i).setImage(images.get(i+10));
 
         }
+
 
 
     }
