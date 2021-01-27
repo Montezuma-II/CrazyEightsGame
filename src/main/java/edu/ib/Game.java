@@ -14,6 +14,11 @@ import java.util.Scanner;
 
 public class Game extends Application {
 
+
+    public static String topCardFaceValue;
+    public static String topCardType;
+
+
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/DeckView.fxml"));
@@ -22,7 +27,9 @@ public class Game extends Application {
         stage.show();
     }
 
-
+public String getFileName(){
+        return "/fxml/images/" +topCardType+"_of_"+topCardFaceValue+".png";
+}
     public enum Status {CONTINUE, WON, LOST, TIE}
 
     public static void main(String[] args) {
@@ -64,7 +71,7 @@ public class Game extends Application {
         System.out.println(you + " and " + player1 + " were dealt " + Rules.CARDS_TO_DEAL + " cards each.");
 
 
-        String topCardFaceValue;
+
         Card topCard;
 
         do {
@@ -72,6 +79,7 @@ public class Game extends Application {
             deck.remove(0);
 
             topCardFaceValue = topCard.getValue();
+            topCardType=topCard.getType();
 
 
             if (topCardFaceValue.equals("8")) {

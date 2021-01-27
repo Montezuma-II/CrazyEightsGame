@@ -41,7 +41,7 @@ public class CardVisual {
     public static List<String> getValidFaceNames()
     {
         return Arrays.asList("2","3","4","5","6","7","8","9","10","jack",
-                            "queen","king","ace");
+                "queen","king","ace");
     }
 
     public String getImage() {
@@ -64,7 +64,7 @@ public class CardVisual {
             this.faceName = faceName;
         else
             throw new IllegalArgumentException("Valid face names are: "+
-                            validFaceNames);
+                    validFaceNames);
     }
 
     public String getSuit() {

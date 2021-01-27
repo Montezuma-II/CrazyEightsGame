@@ -42,7 +42,7 @@ public class Card {
         this.type = type;
         this.value = value;
         this.symbol = pairTypeWithUnicode(type);
-        fileName = "/fxml/images/" +value+"_of_"+type+".png";
+        fileName = "/fxml/images/" +type+"_of_"+value+".png";
     }
 
     public String toString() {
