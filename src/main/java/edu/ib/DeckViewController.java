@@ -111,6 +111,18 @@ public class DeckViewController {
     @FXML
     private Button btnGetCard;
 
+    @FXML
+    private Button ClubButton;
+
+    @FXML
+    private Button DiamondsButton;
+
+    @FXML
+    private Button SpadesButton;
+
+    @FXML
+    private Button HeartsButton;
+
 
 
 
@@ -460,6 +472,26 @@ public class DeckViewController {
 
     @FXML
     private TextField editText;
+
+    @FXML
+    void onClubsButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onDiamondsButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onHeartsButton(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onSpadesButton(ActionEvent event) {
+
+    }
 
 
 

@@ -71,6 +71,11 @@
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Player 2 options:" wrappingWidth="99.73672485351562" />
             <Button fx:id="btnP2TakeCard" mnemonicParsing="false" onAction="#onBtnP2TakeCard" prefHeight="46.0" prefWidth="102.0" text="Take Card" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Choose suit:" wrappingWidth="92.13671875" />
+            <Button fx:id="ClubButton" mnemonicParsing="false" onAction="#onClubsButton" prefHeight="35.0" prefWidth="100.0" text="Clubs" />
+            <Button fx:id="DiamondsButton" mnemonicParsing="false" onAction="#onDiamondsButton" prefHeight="35.0" prefWidth="100.0" text="Diamonds" />
+            <Button fx:id="SpadesButton" mnemonicParsing="false" onAction="#onSpadesButton" prefHeight="38.0" prefWidth="100.0" text="Spades" />
+            <Button fx:id="HeartsButton" mnemonicParsing="false" onAction="#onHeartsButton" prefHeight="35.0" prefWidth="100.0" text="Hearts" />
          </children>
       </VBox>
    </left>
