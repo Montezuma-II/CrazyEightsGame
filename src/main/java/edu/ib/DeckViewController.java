@@ -243,20 +243,28 @@ public class DeckViewController {
 
     @FXML
     void onBtnNewCard(ActionEvent event) {
-        PlayedCards.setImage(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
+//        PlayedCards.setImage(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
+        PlayedCards.setImage(images.get(0)); // pobiera pierwszą kartę z listy images
+        images.remove(0); // usuwa pobraną karte
     }
 
     @FXML
-    public void onBtnP2NW(ActionEvent actionEvent) {
+    void onBtnP2NW(ActionEvent actionEvent) {
+
+    }
+
+    /**
+     * po kliku sprawdza ktre karty zostały zagrane(odwrócone) i doda pierwsza kartę z góry.
+     * @param actionEvent
+     */
+
+    @FXML
+    void onBtnP2TakeCard(ActionEvent actionEvent) {
         for(int i = 0; i<imagesPlayer2.size();i++) {
             if (imagesPlayer2.get(i).getImage() == imageBack)
-            imagesPlayer2.get(i).setImage(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
+                imagesPlayer2.get(i).setImage(images.get(0));
+                images.remove(0);
         }
-    }
-
-
-    @FXML
-    public void onBtnP2TakeCard(ActionEvent actionEvent) {
     }
 
     @FXML
@@ -309,7 +317,7 @@ public class DeckViewController {
 
 
         for (int i = 0; i < 52; i++) {
-            images.add(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName)));
+            images.add(new Image(getClass().getResourceAsStream(deck.dealTopCard().fileName))); // stworzony stos kart!!!!
             //images.add(new Image(getClass().getResourceAsStream(player.takeCardFromTopOfDeck(deck1).));
         }
 
@@ -319,8 +327,9 @@ public class DeckViewController {
 
         for (int i = 0; i < imagesPlayer1.size(); i++) {
             imagesPlayer1.get(i).setImage(images.get(i));
-            imagesPlayer2.get(i).setImage(images.get(i + 10));
-
+            images.remove(0); // usuwa pobrana karte, pozostąłe przesuną się w lewo
+            imagesPlayer2.get(i).setImage(images.get(i));
+            images.remove(0);
         }
 
 
