@@ -94,9 +94,6 @@ public class DeckViewController {
     private Button btnGetCard;
 
     @FXML
-    private Button btnP2NewCard;
-
-    @FXML
     private Button btnP2TakeCard;
 
     @FXML
@@ -111,6 +108,10 @@ public class DeckViewController {
     @FXML
     private Button HeartsButton;
 
+    /**
+     * Metody sprawdzaja czy dany gracz oddal wszystkie karty
+     * Jezeli tak, to wyswietla napis "PLayer X win!"
+     */
 
     public void AreYaWinnigSon() {
         int licznik = 0;
@@ -151,12 +152,13 @@ public class DeckViewController {
     }
 
     /**
-     * metoda porównująca wartości kart, oznaczająca kartę użytą, zmieniająca zapisaną kartę na stole
-     * i ustawiająca karte na odwrócenie
+     * Metoda porownująca wartosci kart, oznaczająca karte uzyta,
+     * zmieniajaca zapisana karte na stole
+     * i ustawiajaca karte na odwrocenie
      *
      * @param nrC - numer tablicy pP
-     * @param pP  - tablica ścieżek kart w ręce
-     * @param PC  - imageView gdzie obraz się znajduje
+     * @param pP  - tablica sciezek kart w rece
+     * @param PC  - imageView gdzie obraz sie znajduje
      * @param s   - status karty, dla gracza
      * @return
      */
@@ -196,10 +198,16 @@ public class DeckViewController {
         return PlayedPaths;
     }
 
+    /**
+     * Metoda sprawdza czy jest to kolejka danego gracza
+     * i implementuje metode checkCart oraz AreYaWinnigSon w przypadku gracza 1
+     * i IamWinningDad w przypadku gracza 2
+     * @param event - przycisniecie danej karty
+     */
+
     @FXML
     void onCardP1C1(MouseEvent event) {
         if (status == 1) {
-
             checkCart(0, Player1Patches, Player1Card1, stanP1);
             AreYaWinnigSon();
         }
@@ -281,7 +289,6 @@ public class DeckViewController {
     @FXML
     void onCardP2C2(MouseEvent event) {
         if (status == -1) {
-
             checkCart(1, Player2Patches, Player2Card2, stanP2);
             IamWinnigDad();
         }
@@ -356,6 +363,31 @@ public class DeckViewController {
 
     }
 
+    /**
+     * Po wcisnieciu przycisku New Card metoda ta wyklada nowa karte na stol
+     * Rozpoczyna rozgrywke oraz daje nowa kartke, gdy zaden z graczy nie moze rzucic karty
+     * @param event - nowa karta jest losowana na stol
+     */
+    @FXML
+    void onBtnNewCard(ActionEvent event) {
+        PlayedCards.setImage(images.get(0)); // pobiera pierwszą kartę z listy images
+        PlayedPaths = patches.get(0);
+        patches.remove(0);
+        images.remove(0); // usuwa pobraną karte
+
+        for(int i=0;i<imagesPlayer1.size();i++) {
+
+            imagesPlayer1.get(i).setDisable(false);
+            imagesPlayer2.get(i).setDisable(false);
+        }
+        btnGetCard.setDisable(false);
+        btnP2TakeCard.setDisable(false);
+    }
+
+    /**
+     * Metoda dobierajaca nowa karte dla danego gracza
+     * @param event - dobranie nowej karty
+     */
 
     @FXML
     void onBtnGetCard(ActionEvent event) {
@@ -378,28 +410,6 @@ public class DeckViewController {
     }
 
     @FXML
-    void onBtnNewCard(ActionEvent event) {
-        PlayedCards.setImage(images.get(0)); // pobiera pierwszą kartę z listy images
-        PlayedPaths = patches.get(0);
-        patches.remove(0);
-        images.remove(0); // usuwa pobraną karte
-
-        for(int i=0;i<imagesPlayer1.size();i++) {
-
-            imagesPlayer1.get(i).setDisable(false);
-            imagesPlayer2.get(i).setDisable(false);
-        }
-        btnGetCard.setDisable(false);
-        btnP2TakeCard.setDisable(false);
-    }
-
-    /**
-     * po kliku sprawdza, które karty zostały zagrane(odwrócone) i doda pierwsza kartę z góry.
-     *
-     * @param actionEvent
-     */
-
-    @FXML
     void onBtnP2TakeCard(ActionEvent actionEvent) {
         if (status == -1) {
             for (int i = 0; i < stanP2.length; i++) {
@@ -420,6 +430,11 @@ public class DeckViewController {
 
     @FXML
     private TextField editText;
+
+    /**
+     * Metody sluza do wybrania koloru, gdy wylozona zostanie 8
+     * @param event - wybierz dany kolor
+     */
 
     @FXML
     void onClubsButton(ActionEvent event) {
@@ -462,12 +477,16 @@ public class DeckViewController {
 
     }
 
-
     /**
      * przywołanie parametrów numeru oraz koloru.
      */
     private CardVisual cardFace = new CardVisual();
 
+    /**
+     * Inicjaizacja rozgrywki
+     * Blokuje wszystkie przyciski procz New Card jezeli na stole nie ma jeszcze karty
+     * Implementuje metode tasujaca karty i rozdawanie kart graczom
+     */
 
     @FXML
     void initialize() {
@@ -485,7 +504,6 @@ public class DeckViewController {
         assert PlayedCards != null : "fx:id=\"PlayedCards\" was not injected: check your FXML file 'DeckView.fxml'.";
         assert btnNewCard != null : "fx:id=\"btnNewCard\" was not injected: check your FXML file 'DeckView.fxml'.";
         assert btnGetCard != null : "fx:id=\"btnGetCard\" was not injected: check your FXML file 'DeckView.fxml'.";
-        assert btnP2NewCard != null : "fx:id=\"btnNewCard\" was not injected: check your FXML file 'DeckView.fxml'.";
         assert btnP2TakeCard != null : "fx:id=\"btnGetCard\" was not injected: check your FXML file 'DeckView.fxml'.";
 
         HeartsButton.setDisable(true);

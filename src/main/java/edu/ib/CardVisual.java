@@ -4,11 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CardVisual {
+
     public String faceName, suit;
     public String image;
     public String fileName;
-
-
 
     public CardVisual() {
     }
@@ -29,9 +28,10 @@ public class CardVisual {
     }
 
     /**
-     * This method returns a list of face names that are valid for
-     * Card objects
+     * Metoda zwraca liste nazw przodów kart
+     * uzywanych w trakcie gry
      */
+
     public static List<String> getValidFaceNames()
     {
         return Arrays.asList("2","3","4","5","6","7","8","9","10","jack",
@@ -47,7 +47,7 @@ public class CardVisual {
     }
 
     /**
-     * This method will validate the argument and set the instance variable
+     *Metoda weryfikuje argumenty i ustawia zmienna
      * @param faceName 2,3,4,5,6,7,8,9,10,jack,queen,king
      */
     public void setFaceName(String faceName) {
@@ -66,9 +66,10 @@ public class CardVisual {
     }
 
     /**
-     * This method will return a list of valid suits
+     * Meoda zwraca liste kolorow
      * @return spades, hearts, clubs, diamonds
      */
+
     public static List<String> getValidSuits()
     {
         return Arrays.asList("hearts","diamonds","spades","clubs");

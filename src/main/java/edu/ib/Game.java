@@ -10,6 +10,12 @@ import java.io.IOException;
 
 public class Game extends Application {
 
+    /**
+     *
+     * @param stage - pole gry
+     * @throws IOException
+     */
+
     @Override
     public void start(Stage stage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/DeckView.fxml"));

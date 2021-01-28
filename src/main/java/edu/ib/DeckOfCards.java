@@ -8,19 +8,8 @@ public class DeckOfCards {
     private ArrayList<CardVisual> deck;
     private String backOfCardImage;
 
-
     /**
-     * This is a 1 argument constructor that passes in a collection
-     * of Card objects
-     * @param deck
-     */
-    public DeckOfCards(ArrayList<CardVisual> deck) {
-        this.deck = deck;
-        backOfCardImage = "/fxml/images/backOfCard.png";
-    }
-
-    /**
-     * This is a zero argument constructor that will build a full Deck of Cards
+     * Konstruktor tworzacy talie kart
      */
     public DeckOfCards()
     {
@@ -54,7 +43,7 @@ public class DeckOfCards {
     }
 
     /**
-     * This method will "deal" the top card off the deck
+     * Metoda wyrzucajaca pierwsza karte na stol
      */
     public CardVisual dealTopCard()
     {
