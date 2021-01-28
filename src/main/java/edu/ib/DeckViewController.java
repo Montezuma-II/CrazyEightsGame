@@ -180,6 +180,8 @@ public class DeckViewController {
                 PC.setImage(imageBack);
                 s[nrC] = 1;
                 PlayedPaths = pP.get(nrC).toString();
+                images.add(PlayedCards.getImage());
+                patches.add(PlayedPaths);
             }
         }
         status *= -1;
@@ -549,12 +551,5 @@ public class DeckViewController {
             Player2Patches.add(patches.get(0)); // prowadzenie ścieżki karty
             patches.remove(0);                     // usuwanie ścieżki żeby się nie powtarzała
         }
-
-
-
-
-
-
-
     }
 }
