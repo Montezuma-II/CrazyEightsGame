@@ -54,13 +54,13 @@
    <center>
       <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="598.0">
                <children>
                   <ImageView fx:id="StackCards" fitHeight="140.0" fitWidth="200.0" layoutX="249.0" layoutY="3.0" onMousePressed="#onStackPressed" pickOnBounds="true" preserveRatio="true" />
                   <TextField fx:id="editText" editable="false" layoutX="32.0" layoutY="46.0" prefHeight="65.0" prefWidth="149.0" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="598.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="598.0">
                <children>
                   <ImageView fx:id="PlayedCards" fitHeight="140.0" fitWidth="200.0" layoutX="249.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" />
                </children>
